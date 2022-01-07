@@ -1,2 +1,16 @@
-http://127.0.0.1:8000/api/files/delete
-{"uniq_Id":"355a0462c6124663aa8161c39b8bb7c4"}
+Authentication type is Basicauth
+
+1.for delete files:
+HTTP DELETE -> http://127.0.0.1:8000/api/files/delete
+  {"uniq_Id":"355a0462c6124663aa8161c39b8bb7c4"}
+ 
+2.for download files:
+HTTP GET -> http://127.0.0.1:8000/api/files/uniq_Id
+
+3.for download files with range: (use range header)
+HTTP GET -> http://127.0.0.1:8000/api/files/uniq_Id
+
+4.for get files list:
+http://127.0.0.1:8000/api/files/list
+
+

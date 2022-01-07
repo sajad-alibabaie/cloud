@@ -1,0 +1,334 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Roboto;
+}
+
+.height100 {
+    height: 100%;
+}
+
+.extra-data {
+    margin: auto;
+}
+
+.Signin {
+    box-shadow: 0 4px 30px #ffffff1a;
+    border-radius: 16px;
+
+}
+
+.Data {
+    display: flow-root;
+    border-radius: 15px;
+    padding: 20px;
+    background: #080614cf;
+    margin-bottom: 30px;
+}
+
+.Info {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.text {
+    color: whitesmoke;
+    font-style: normal;
+    text-decoration: none;
+    display: block;
+}
+
+.file-info {
+    color: whitesmoke;
+    font-style: normal;
+    text-decoration: none;
+    display: block;
+    cursor: help;
+}
+
+.center {
+    font-size: 25px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.input-gr {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    color: whitesmoke;
+}
+
+.loginbtn {
+    color: white;
+    border-radius: 8%;
+    border: 2px solid #ccc;
+    width: 25%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.loginbtn:hover {
+    border-radius: 8%;
+    border: 2px solid #ccc;
+    background-color: rgb(22 14 100);
+}
+
+.label {
+}
+
+
+button {
+    font-family: Roboto;
+}
+
+.header {
+    background: rgba(7, 4, 21, 30)
+}
+
+.main-body {
+    display: flow-root;
+    border-radius: 15px;
+    padding: 20px;
+    background: #080614cf;
+    margin-bottom: 30px;
+}
+
+
+.part {
+    margin-top: 30px;
+}
+
+
+.filecontent {
+    text-align: center;
+}
+
+.fileDownload {
+    padding: 15px 0px;
+    margin: 15px 0px;
+}
+
+
+.leftname {
+    display: inline-block;
+    text-align: left;
+    margin-top: 50px;
+    color: whitesmoke;
+
+}
+
+
+.logoutbut {
+    margin-top: 30px;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    float: right;
+}
+
+.logoutbut:hover {
+    border-radius: 12px;
+    margin-top: 31px;
+    margin-bottom: 25px;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: rgb(22 14 62);
+
+}
+
+.uploadbut {
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 3px solid #ccc;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+    width: 100%;
+    color: whitesmoke;
+    font-size: larger;
+}
+
+.uploadbut:hover {
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 3px solid #ccc;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: rgb(22 14 62);
+    margin-right: 50px;
+}
+
+.fileextrabut {
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 3px solid #ccc;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: whitesmoke;
+    font-size: larger;
+    width: 32%;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.fileextrabut:hover {
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 3px solid #ccc;
+    cursor: pointer;
+    background-color: rgb(22 14 62);
+    width: 32%;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.fileextragroup {
+    margin-left: 2%;
+}
+
+.login {
+    width: 50%;
+    height: 100px;
+    float: left;
+}
+
+.logout {
+    width: 50%;
+    height: 100px;
+    float: right;
+}
+
+.file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.drag-text {
+    text-align: center;
+}
+
+.drag-text h3 {
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.image-upload-wrap {
+    margin-top: 20px;
+    border: 4px dashed #ccc;
+    position: relative;
+}
+
+.image-upload-wrap:hover {
+    color: #000;
+    background-color: rgb(22 14 62);
+    border: 4px dashed #f8f9fa;;
+}
+
+.modal-p {
+    display: inline-block;;
+}
+
+.modal-i {
+    display: block;
+    float: right;
+}
+
+.modal-content-addison {
+    background: #1b182c;
+    color: white;
+    border-radius: 12px;
+}
+
+.close-addison {
+    background-color: rgb(27 24 44);
+    color: white;
+    border: 2px solid #ccc;
+    border-radius: 7px;
+}
+
+.close-addison:hover {
+    background-color: rgb(22 14 100);
+    color: white;
+}
+
+.userinfo-p {
+    display: inline-block;
+    color: white;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.userinfo-i {
+    display: block;
+    float: right;
+    color: white;
+    margin-right: 40px;
+    margin-top: 15px;
+}
+
+.Signup {
+    box-shadow: 0 4px 30px #ffffff1a;
+    border-radius: 16px;
+}
+
+.signupbtn {
+    color: white;
+    border-radius: 8%;
+    border: 2px solid #ccc;
+    width: 25%;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.signupbtn:hover {
+    border-radius: 8%;
+    border: 2px solid #ccc;
+    background-color: rgb(22 14 100);
+
+}
+
+.extra-error {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+#deletebtn:hover {
+    background-color: #d31f61d1;
+}
+
+.list-file {
+    color: white;
+    display: inline;
+    float: left;
+    cursor: help;
+}
+
+.list-file-name {
+    float: left;
+    width: 100%;
+}
+
+.list-file-img {
+    width: 100%;
+    display: block;
+}

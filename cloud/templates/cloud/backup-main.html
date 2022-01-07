@@ -1,0 +1,369 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cloud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="{% static "cloud/js/jquery-3.6.0.min.js" %}"></script>
+    <link href='{% static "cloud/css/bootstrap.min.css" %}' rel='stylesheet'>
+    <script src="{% static "cloud/js/bootstrap.min.js" %}"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                document.getElementById('drag_and_title').innerHTML = input.files[0].name;
+            }
+        }
+    </script>
+</head>
+<style>
+    body {
+        #background: #0a0a0a;
+        #background: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v996-025-kroirgmb.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&auto=format&ixlib=js-2.2.1&s=4354d3be1b8b0d5f7a741b056b8955eb);
+        background: url('{% static "cloud/img/@lwall_3Dl (27).jpg" %}');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Roboto;
+    {#font-family: "Arial Black";#}
+
+    }
+
+    button {
+        font-family: Roboto;
+    }
+
+    .header {
+        background: rgba(7, 4, 21, 30)
+    }
+
+    .bodyy {
+        display: flow-root;
+        border-radius: 15px;
+        padding: 20px;
+        background: #080614cf;
+        margin-bottom: 30px;
+    }
+
+
+    .part {
+        margin-top: 30px;
+    }
+
+
+    .Signin {
+        position: relative;
+    }
+
+    .Signin2 {
+        text-align: center;
+    }
+
+    .text {
+        color: whitesmoke;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+    }
+
+    .fileDownload {
+        padding: 15px 0px;
+        margin: 15px 0px;
+    }
+
+
+    .leftname {
+        display: inline-block;
+        text-align: left;
+        margin-bottom: 45px;
+        margin-top: 50px;
+        color: whitesmoke;
+        margin-left: 50px;
+
+    }
+
+
+    .logoutbut {
+        margin-top: 30px;
+        margin-bottom: 25px;
+        padding: 12px 24px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+        float: right;
+        margin-right: 50px;
+    }
+
+    .logoutbut:hover {
+        border-radius: 12px;
+        margin-top: 31px;
+        margin-bottom: 25px;
+        padding: 12px 24px;
+        cursor: pointer;
+        background-color: rgb(22 14 62);
+        margin-right: 50px;
+    }
+
+    .uploadbut {
+        border-radius: 12px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border: 3px solid #ccc;
+        padding: 12px 24px;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin-right: 50px;
+        width: 100%;
+        color: whitesmoke;
+        font-size: larger;
+    }
+
+    .uploadbut:hover {
+        border-radius: 12px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border: 3px solid #ccc;
+        padding: 12px 24px;
+        cursor: pointer;
+        background-color: rgb(22 14 62);
+        margin-right: 50px;
+    }
+
+
+    .login {
+        width: 50%;
+        height: 150px;
+        float: left;
+    }
+
+    .logout {
+        width: 50%;
+        height: 150px;
+        float: right;
+    }
+
+    .file-upload-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .drag-text {
+        text-align: center;
+    }
+
+    .drag-text h3 {
+        font-weight: 100;
+        text-transform: uppercase;
+        color: #f8f9fa;
+        padding: 60px 0;
+    }
+
+    .image-upload-wrap {
+        margin-top: 20px;
+        border: 4px dashed #ccc;
+        position: relative;
+    }
+
+    .image-upload-wrap:hover {
+        color: #000;
+        background-color: rgb(22 14 62);
+        border: 4px dashed #f8f9fa;;
+    }
+
+    .modal-p {
+        display: inline-block;;
+    }
+
+    .modal-i {
+        display: block;
+        float: right;
+    }
+
+    .modal-content-addison {
+        background: #1b182c;
+        color: white;
+        border-radius: 12px;
+    }
+
+    .close-addison {
+        background-color: rgb(27 24 44);
+        color: white;
+        border: 2px solid #ccc;
+        border-radius: 7px;
+    }
+
+    .close-addison:hover {
+        background-color: rgb(22 14 100);
+        color: white;
+    }
+
+    .userinfo-p {
+        display: inline-block;
+        color: white;
+        margin-left: 40px;
+        margin-top: 15px;
+    }
+
+    .userinfo-i {
+        display: block;
+        float: right;
+        color: white;
+        margin-right: 40px;
+        margin-top: 15px;
+    }
+</style>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="header">
+                <div class="login">
+
+                    <div class="leftname">
+                        <label style=" font-size: larger; margin-bottom: 45px;">{{ user.username }}</label>
+                    </div>
+                </div>
+                <div class="logout">
+                    <a href="/account/logout">
+                        <label class="logoutbut" style="color: whitesmoke; margin-bottom: 10%; font-size: larger;">Log
+                            Out
+                        </label>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="part">
+                <div class="bodyy">
+                    <div class="Signin">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="image-upload-wrap">
+                                {% render_field form.file type="file" class="file-upload-input" onchange="readURL(this);" %}
+                                <div class="drag-text">
+                                    <h3 id="drag_and_title">Drag and drop a file or select add File</h3>
+                                </div>
+                            </div>
+                            <p><input class="uploadbut"
+                                      type="submit"
+                                      value="Upload"/></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="part">
+                <div class="bodyy">
+                    <div class="Signin2">
+                        {% if documents %}
+                            {% for document in documents %}
+                                <div class="fileDownload">
+                                    <i class="text"
+                                       onclick="fileinfo(this);" data-download="{{ document.download_count }}"
+                                       data-lastdown="{{ document.last_download }}"
+                                       data-uploadtime="{{ document.upload_time }}"
+                                       data-size="{{ document.size }}"
+                                       data-status="{{ document.Status }}"
+                                       data-href="/download/{{ document.uniq_Id.hex }}">{{ document.name }}
+                                    </i>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <i style="color:#fff;">No File To Show</i>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="part">
+                <div class="bodyy">
+                    <div class="Signin3">
+                        <div>
+                            <p class="userinfo-p">Download</p>
+                            <i class="userinfo-i">{{ user.profile.Download|floatformat:3 }} GB</i><br/><br/>
+
+                            <p class="userinfo-p">Upload</p>
+                            <i class="userinfo-i">{{ user.profile.Upload|floatformat:3 }} GB</i><br/><br/>
+
+                            <p class="userinfo-p">Total Storage</p>
+                            <i class="userinfo-i">{{ user.profile.Total_storage|floatformat:3 }} GB</i><br/><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog"
+         aria-labelledby="infoModalTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-addison">
+                <div class="modal-header">
+                    <h5 class="modal-title align-content-center" id="ModalTitle"></h5>
+                    <button onclick="$('#infoModal').modal('toggle');" type="button" class="close close-addison"
+                            data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-p">Download Count: </p> <i class="modal-i" id="mo-dcount"></i><br/>
+                    <p class="modal-p">Size: </p><i class="modal-i" id="mo-size"></i><br/>
+                    <p class="modal-p">Status: </p><i class="modal-i" id="mo-status"></i><br/>
+                    <p class="modal-p">Last Download: </p> <i class="modal-i" id="mo-dtime"></i><br/>
+                    <p class="modal-p">Upload Time: </p><i class="modal-i" id="mo-utime"></i><br/>
+                    <a id="downloadbtn">
+                        <button type="button" class="uploadbut" data-dismiss="modal">Download</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<footer>
+
+</footer>
+</html>
+<script>
+    function fileinfo(input) {
+        console.log(input.dataset.href);
+        $('#mo-dcount').html(input.dataset.download);
+        $('#mo-dtime').html(input.dataset.lastdown);
+        $('#mo-utime').html(input.dataset.uploadtime);
+        let size = input.dataset.size;
+        size /= 1048576;
+        size = Math.round(size * 100) / 100;
+        if (size < 1) {
+            size = Math.round(size * 1024);
+            $('#mo-size').html(size + " KB");
+        } else if (size > 1 && size < 1000) {
+            $('#mo-size').html(size + " MB");
+        } else {
+            size /= 1024;
+            size = Math.round(size * 1000) / 1000;
+            $('#mo-size').html(size + " GB");
+        }
+        let status = input.dataset.status;
+        if (status = 1)
+            status = "private";
+        else
+            status = "public";
+        $('#mo-status').html(status);
+        $('#ModalTitle').html(input.innerHTML);
+        $("#downloadbtn").attr("href", input.dataset.href)
+        $('#infoModal').modal('toggle');
+    }
+</script>

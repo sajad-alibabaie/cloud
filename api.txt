@@ -1,0 +1,2 @@
+http://127.0.0.1:8000/api/files/delete
+{"uniq_Id":"355a0462c6124663aa8161c39b8bb7c4"}

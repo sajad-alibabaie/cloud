@@ -1,0 +1,92 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<header>
+    <title>Cloud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="{% static "cloud/js/jquery-3.6.0.min.js" %}"></script>
+    <link href='{% static "cloud/css/bootstrap.min.css" %}' rel='stylesheet'>
+    <link href='{% static "cloud/css/main.css" %}' rel='stylesheet'>
+    <script src="{% static "cloud/js/bootstrap.min.js" %}"></script>
+
+    <style>
+        body {
+            #background: #0a0a0a;
+            #background: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v996-025-kroirgmb.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&auto=format&ixlib=js-2.2.1&s=4354d3be1b8b0d5f7a741b056b8955eb);
+            background: url('{% static "cloud/img/@lwall_3Dl (27).jpg" %}');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Roboto;
+        }
+    </style>
+</header>
+<body class="height100">
+<div class="container height100 ">
+    <div class="row height100">
+        <div class="col-lg-4 col-md-3 col-sm-2 "></div>
+        <div class="col-lg-4 col-md-6 col-sm-8 extra-data">
+            <div class="Signup">
+                <div class="Data">
+
+                    <form class="Info" action="" method="post">
+                        {% csrf_token %}
+                        <div class="center">
+                            <label class="label center">Sign Up</label>
+                        </div>
+
+                        <div class="input-gr">
+                            <label class="text" for="username">Username:</label>
+                            {% render_field form.username type="text" class="label" placeholder="Your name..." %}
+                        </div>
+
+                        <div class="input-gr">
+                            <label class="text" for="email">Email:</label>
+                            {% render_field form.email type="text" class="label" placeholder="email@example.com" %}
+                        </div>
+
+                        <div class="input-gr">
+                            <label class="text" for="password">Password:</label>
+                            {% render_field form.password1 type="password" class="label" placeholder="*******" %}
+                        </div>
+
+                        <div class="input-gr">
+                            <label class="text" for="password">Confirm Password:</label>
+                            {% render_field form.password2 type="password" class="label" placeholder="*******" %}
+                        </div>
+
+
+                        {% if error %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="extra-error alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                        <div class="center">
+                            <button type="submit" class="signupbtn">Signup</button>
+                        </div>
+                        <div class="center">
+                            <i style="font-size: 15px">You have account ? <a
+                                    href="/account/login">Login</a></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-2 "></div>
+    </div>
+</div>
+
+
+</body>
+<footer>
+
+</footer>
+</html>

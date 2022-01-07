@@ -1,0 +1,53 @@
+{% extends "cloud/base_page.html" %}
+{% load widget_tweaks %}
+{% block main_content %}
+
+
+    <div class="container main-section pt-20">
+        <div class="row">
+            <div class="col-12">
+                <div class="file-upload">
+                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">
+                        Add
+                        File
+                    </button>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="image-upload-wrap">
+                            {% render_field form.file type="file" class="file-upload-input" onchange="readURL(this);" %}
+                            <div class="drag-text">
+                                <h3 id="drag_and_title">Drag and drop a file or select add File</h3>
+                            </div>
+                        </div>
+                        <p><input class="file-submit-btn" type="submit" value="Upload"/></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {% if documents %}
+                    {% for document in documents %}
+                        {% if forloop.counter|add:'2'|divisibleby:'3' %}
+                            {% if forloop.counter > 3 %}
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                        {% endif %}
+                        <div class="col-lg-4 text-center">
+                            <div class="document-list">
+                                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                <a href="/download/{{ document.uniq_Id.hex }}"
+                                   class="m-0 p-2 bg-danger text-white">{{ document.name }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No documents.</p>
+                {% endif %}
+                </div>
+        </div>
+
+    </div>
+{% endblock %}
+

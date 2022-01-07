@@ -1,0 +1,69 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="{% static "cloud/js/jquery-3.6.0.min.js" %}"></script>
+    <link href='{% static "cloud/css/bootstrap.min.css" %}' rel='stylesheet'>
+    <link href='{% static "cloud/css/main.css" %}' rel='stylesheet'>
+    <script src="{% static "cloud/js/bootstrap.min.js" %}"></script>
+
+    <style>
+        body {
+            #background: #0a0a0a;
+            #background: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v996-025-kroirgmb.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&auto=format&ixlib=js-2.2.1&s=4354d3be1b8b0d5f7a741b056b8955eb);
+            background: url('{% static "cloud/img/@lwall_3Dl (27).jpg" %}');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Roboto;
+        }
+    </style>
+</head>
+<body class="height100">
+<div class="container height100">
+    <div class="row height100">
+    <div class="col-lg-4 col-md-3 col-sm-2 col-xs-0"></div>
+    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 extra-data">
+        <div class="Signin">
+            <div class="Data">
+                <form class="Info" method="post" action="">
+                    {% csrf_token %}
+                    <div class="center">
+                        <label class="label center">Login</label>
+                    </div>
+                    <div class="input-gr">
+                        <label class="text" for="username">Username:</label>
+                        <input class="label" type="text" name="username" placeholder="username">
+                    </div>
+
+                    <div class="input-gr">
+                        <label class="text" for="password">Password:</label>
+                        <input class="label" type="password" id="password" name="password" placeholder="*******">
+                    </div>
+                    {% if error %}
+                             <div class="extra-error alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                    {% endif %}
+                    <div class="center">
+                        <button type="submit" class="loginbtn">Login</button>
+                    </div>
+                    <div class="center">
+                        <i style="font-size: 15px">Does not have account ? <a
+                                href="/account/signup">Signup</a></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-2 col-xs-0 "></div>
+</div>
+</div>
+</body>
+</html>
